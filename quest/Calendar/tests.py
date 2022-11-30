@@ -25,7 +25,7 @@ class ConferenceRoomTests(APITestCase):
         }
         self.client.force_authenticate(user=user)
         response = self.client.post(url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        assert response.status_code == 201
 
 
 class CalendarMeetingTest(APITestCase):
